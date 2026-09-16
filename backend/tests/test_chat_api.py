@@ -3,6 +3,16 @@ from app.main import app
 
 client = TestClient(app)
 
+def test_greeting_questions():
+    """Validates greeting inputs like 'hello', 'hai', 'hi' produce friendly welcoming responses."""
+    for greeting in ["hello", "hai", "hi", "good morning"]:
+        payload = {"message": greeting, "conversation": []}
+        response = client.post("/api/chat", json=payload)
+        assert response.status_code == 200
+        data = response.json()
+        assert data["type"] == "message"
+        assert "welcome" in data["message"].lower() or "concierge" in data["message"].lower()
+
 def test_checkin_question():
     """Scenario 1: Normal property question (Check-in time)."""
     payload = {
@@ -39,7 +49,6 @@ def test_cancellation_policy_question():
 
 def test_multiturn_followup_question():
     """Scenario 4: Multi-turn conversation with follow-up pronoun resolution."""
-    # Turn 1
     turn1_payload = {
         "message": "Which room is suitable for 3 guests?",
         "conversation": []
@@ -49,7 +58,6 @@ def test_multiturn_followup_question():
     m1 = r1.json()["message"]
     assert "Deluxe Family" in m1 or "3" in m1 or "Family" in m1
 
-    # Turn 2 with conversation history
     turn2_payload = {
         "message": "Does it include breakfast?",
         "conversation": [

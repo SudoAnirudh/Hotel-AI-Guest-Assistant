@@ -130,7 +130,13 @@ class LLMService:
         Local grounded rule-based QA engine. Performs entity recognition & intent matching
         against hotel_knowledge.json with follow-up context resolution.
         """
-        msg_lower = user_message.lower()
+        msg_lower = user_message.lower().strip()
+        words = re.findall(r'\b\w+\b', msg_lower)
+
+        # 0. Greetings handling ("hello", "hi", "hai", "hey", "good morning")
+        greetings = {"hi", "hello", "hai", "hey", "greetings", "hola", "namaste"}
+        if any(w in greetings for w in words) or "good morning" in msg_lower or "good afternoon" in msg_lower or "good evening" in msg_lower:
+            return "Hello and welcome to Harbor View Hotel! 🌊 I'm your guest concierge assistant. How may I help you today with your stay, room options, amenities, dining, or availability?"
 
         # Check conversation history for follow-up context
         last_discussed_room = None

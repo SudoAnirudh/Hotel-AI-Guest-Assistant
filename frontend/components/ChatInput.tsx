@@ -42,22 +42,22 @@ export const ChatInput: React.FC<ChatInputProps> = ({
   };
 
   return (
-    <div className="sticky bottom-0 z-20 w-full glass-card border-t border-slate-200/80 dark:border-slate-800/80 p-3 sm:p-4 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
+    <div className="sticky bottom-0 z-30 w-full luxury-glass border-t border-amber-500/20 p-3.5 sm:p-4 shadow-2xl backdrop-blur-xl">
       <div className="max-w-3xl mx-auto">
-        <form onSubmit={handleSubmit} className="flex items-end gap-2">
+        <form onSubmit={handleSubmit} className="flex items-end gap-2.5">
           
-          {/* Quick Availability Trigger */}
+          {/* Quick Availability Form Trigger */}
           <button
             type="button"
             onClick={onOpenAvailabilityForm}
-            className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 hover:bg-teal-50 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500/40 transition-all cursor-pointer shrink-0"
+            className="p-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 transition-all cursor-pointer shrink-0 shadow-md"
             title="Check Room Availability"
           >
             <Calendar className="w-4 h-4" />
           </button>
 
           {/* Textarea Input */}
-          <div className="flex-1 relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 focus-within:border-teal-500/60 focus-within:ring-2 focus-within:ring-teal-500/20 transition-all">
+          <div className="flex-1 relative rounded-2xl border border-slate-700/80 bg-slate-900/90 focus-within:border-amber-500/60 focus-within:ring-2 focus-within:ring-amber-500/20 transition-all shadow-inner">
             <textarea
               ref={textareaRef}
               rows={1}
@@ -66,7 +66,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               onKeyDown={handleKeyDown}
               placeholder="Ask anything about Harbor View Hotel (check-in, rooms, pool, breakfast)..."
               disabled={isLoading}
-              className="w-full text-xs sm:text-sm px-3.5 py-2.5 bg-transparent text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none resize-none max-h-32"
+              className="w-full text-xs sm:text-sm px-4 py-3 bg-transparent text-slate-100 placeholder-slate-400 focus:outline-none resize-none max-h-32"
             />
           </div>
 
@@ -74,10 +74,10 @@ export const ChatInput: React.FC<ChatInputProps> = ({
           <button
             type="submit"
             disabled={!text.trim() || isLoading}
-            className={`p-2.5 rounded-xl font-medium text-white transition-all duration-200 flex items-center justify-center shrink-0 ${
+            className={`p-3 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center shrink-0 shadow-md ${
               text.trim() && !isLoading
-                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 shadow-xs hover:shadow-md cursor-pointer'
-                : 'bg-slate-300 dark:bg-slate-800 text-slate-500 cursor-not-allowed'
+                ? 'bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 cursor-pointer shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-105'
+                : 'bg-slate-800 text-slate-500 border border-slate-700/60 cursor-not-allowed'
             }`}
           >
             <Send className="w-4 h-4" />
@@ -85,11 +85,11 @@ export const ChatInput: React.FC<ChatInputProps> = ({
 
         </form>
 
-        <div className="flex items-center justify-between text-[10px] text-slate-400 dark:text-slate-500 mt-2 px-1">
-          <span className="flex items-center gap-1">
-            <Sparkles className="w-3 h-3 text-teal-500" /> Powered by Harbor View AI Assistant
+        <div className="flex items-center justify-between text-[10px] text-slate-400 mt-2.5 px-1">
+          <span className="flex items-center gap-1.5 font-medium">
+            <Sparkles className="w-3 h-3 text-amber-400" /> Harbor View Resort Concierge Intelligence
           </span>
-          <span className="hidden sm:inline">Press Enter to send, Shift + Enter for new line</span>
+          <span className="hidden sm:inline text-slate-400">Press Enter to send, Shift + Enter for new line</span>
         </div>
       </div>
     </div>

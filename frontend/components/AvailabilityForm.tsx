@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { AvailabilityParams } from '@/types';
-import { Calendar, Users, Search, AlertCircle, X } from 'lucide-react';
+import { Calendar, Users, Search, AlertCircle, X, Sparkles } from 'lucide-react';
 
 interface AvailabilityFormProps {
   onSearch: (params: AvailabilityParams) => void;
@@ -15,7 +15,6 @@ export const AvailabilityForm: React.FC<AvailabilityFormProps> = ({
   onClose,
   initialParams
 }) => {
-  // Helper to format date YYYY-MM-DD
   const getFutureDate = (daysAhead: number) => {
     const d = new Date();
     d.setDate(d.getDate() + daysAhead);
@@ -54,80 +53,80 @@ export const AvailabilityForm: React.FC<AvailabilityFormProps> = ({
   };
 
   return (
-    <div className="w-full glass-card rounded-2xl p-4 sm:p-5 border border-teal-500/30 shadow-md relative animate-fade-in bg-white/90 dark:bg-slate-900/90">
+    <div className="w-full luxury-glass rounded-2xl p-5 border border-amber-500/30 shadow-2xl relative animate-fade-in bg-slate-900/95">
       {onClose && (
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="absolute top-4 right-4 p-1.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 border border-transparent hover:border-slate-700 transition-colors"
         >
           <X className="w-4 h-4" />
         </button>
       )}
 
-      <div className="flex items-center gap-2 mb-3">
-        <div className="p-2 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="p-2.5 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-600 text-slate-950 shadow-md">
           <Calendar className="w-4 h-4" />
         </div>
         <div>
-          <h3 className="font-semibold text-slate-900 dark:text-slate-100 text-sm">
+          <h3 className="font-serif-luxury font-bold text-slate-100 text-base text-gold-gradient">
             Check Room Availability
           </h3>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Select dates and guest count for live rates
+          <p className="text-xs text-slate-400">
+            Select travel dates and guest party size for live rates
           </p>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           
           {/* Check-in Date */}
           <div>
-            <label className="block text-[11px] font-medium text-slate-600 dark:text-slate-400 mb-1">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
               Check-in Date
             </label>
             <input
               type="date"
               value={checkIn}
               onChange={(e) => setCheckIn(e.target.value)}
-              className="w-full text-xs font-medium px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+              className="w-full text-xs font-medium px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500"
               required
             />
           </div>
 
           {/* Check-out Date */}
           <div>
-            <label className="block text-[11px] font-medium text-slate-600 dark:text-slate-400 mb-1">
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
               Check-out Date
             </label>
             <input
               type="date"
               value={checkOut}
               onChange={(e) => setCheckOut(e.target.value)}
-              className="w-full text-xs font-medium px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-500/50"
+              className="w-full text-xs font-medium px-3.5 py-2.5 rounded-xl border border-slate-700 bg-slate-950 text-slate-100 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500"
               required
             />
           </div>
 
           {/* Guest Count */}
           <div>
-            <label className="block text-[11px] font-medium text-slate-600 dark:text-slate-400 mb-1">
-              Guests
+            <label className="block text-[11px] font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+              Guest Party Size
             </label>
-            <div className="flex items-center space-x-2 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-xl px-3 py-1.5">
-              <Users className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+            <div className="flex items-center space-x-2 border border-slate-700 bg-slate-950 rounded-xl px-3.5 py-2">
+              <Users className="w-4 h-4 text-amber-400 shrink-0" />
               <select
                 value={adults}
                 onChange={(e) => setAdults(Number(e.target.value))}
-                className="w-full text-xs font-medium bg-transparent text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer"
+                className="w-full text-xs font-medium bg-transparent text-slate-100 focus:outline-none cursor-pointer"
               >
-                <option value={1}>1 Guest</option>
-                <option value={2}>2 Guests</option>
-                <option value={3}>3 Guests</option>
-                <option value={4}>4 Guests</option>
-                <option value={5}>5 Guests</option>
-                <option value={6}>6 Guests</option>
-                <option value={7}>7+ Guests</option>
+                <option value={1} className="bg-slate-900 text-slate-100">1 Guest</option>
+                <option value={2} className="bg-slate-900 text-slate-100">2 Guests</option>
+                <option value={3} className="bg-slate-900 text-slate-100">3 Guests</option>
+                <option value={4} className="bg-slate-900 text-slate-100">4 Guests</option>
+                <option value={5} className="bg-slate-900 text-slate-100">5 Guests</option>
+                <option value={6} className="bg-slate-900 text-slate-100">6 Guests</option>
+                <option value={7} className="bg-slate-900 text-slate-100">7+ Guests</option>
               </select>
             </div>
           </div>
@@ -135,18 +134,18 @@ export const AvailabilityForm: React.FC<AvailabilityFormProps> = ({
         </div>
 
         {error && (
-          <div className="flex items-center gap-1.5 p-2 rounded-lg bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-900 text-rose-600 dark:text-rose-400 text-xs">
-            <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+          <div className="flex items-center gap-2 p-2.5 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-300 text-xs">
+            <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
         )}
 
         <button
           type="submit"
-          className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-medium text-xs shadow-xs hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+          className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
-          <Search className="w-3.5 h-3.5" />
-          <span>Find Available Rooms</span>
+          <Search className="w-4 h-4 text-slate-950" />
+          <span>Find Available Accommodations</span>
         </button>
       </form>
     </div>

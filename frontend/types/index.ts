@@ -4,6 +4,7 @@ export interface RoomResult {
   id: string;
   name: string;
   capacity: number;
+  available_inventory?: number;
   price_per_night: number;
   total_price?: number;
   bed_type: string;
