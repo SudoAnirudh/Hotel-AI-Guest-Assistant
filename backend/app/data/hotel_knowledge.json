@@ -1,0 +1,138 @@
+{
+  "hotel_info": {
+    "name": "Harbor View Hotel",
+    "tagline": "Luxury Oceanfront Haven & Boutique Retreat",
+    "description": "Harbor View Hotel is a premier 5-star beachfront resort overlooking the sapphire waters of the bay. Offering serene hospitality, world-class dining, and elegant modern suites.",
+    "address": "100 Ocean Drive, Harbor Bay, CA 90210",
+    "phone": "+1 (555) 839-2000",
+    "email": "concierge@harborviewhotel.com",
+    "check_in_time": "3:00 PM",
+    "check_out_time": "11:00 AM",
+    "star_rating": 5
+  },
+  "rooms": [
+    {
+      "id": "deluxe_king",
+      "name": "Deluxe King Suite",
+      "capacity": 2,
+      "available_inventory": 4,
+      "price_per_night": 220,
+      "bed_type": "1 King Bed",
+      "size_sqft": 450,
+      "breakfast_included": true,
+      "ocean_view": true,
+      "description": "Spacious luxury room featuring a plush King bed, private balcony with ocean views, marble bathroom with rain shower, and high-speed Wi-Fi.",
+      "amenities": ["Ocean balcony", "Free Wi-Fi", "Smart TV", "Mini bar", "Espresso machine", "Rain shower", "Bathrobes"]
+    },
+    {
+      "id": "deluxe_twin",
+      "name": "Deluxe Twin Room",
+      "capacity": 2,
+      "available_inventory": 2,
+      "price_per_night": 200,
+      "bed_type": "2 Queen Beds",
+      "size_sqft": 480,
+      "breakfast_included": true,
+      "ocean_view": false,
+      "description": "Comfortable and stylish room with two Queen beds, garden view, desk workspace, and high-speed Wi-Fi.",
+      "amenities": ["Garden view", "Free Wi-Fi", "Smart TV", "Mini fridge", "Work desk", "Coffee maker"]
+    },
+    {
+      "id": "deluxe_family",
+      "name": "Deluxe Family Suite",
+      "capacity": 4,
+      "available_inventory": 3,
+      "price_per_night": 350,
+      "bed_type": "1 King Bed + 1 Sofa Bed",
+      "size_sqft": 650,
+      "breakfast_included": true,
+      "ocean_view": true,
+      "description": "Ideal for families or groups of up to 4. Includes a master King bedroom, separate living space with convertible sofa bed, dual vanity bathroom, and panoramic bay views.",
+      "amenities": ["Panoramic bay view", "Separate living area", "Free Wi-Fi", "2 Smart TVs", "Mini bar", "Dining table", "Sofa bed"]
+    },
+    {
+      "id": "ocean_villa",
+      "name": "Oceanfront Luxury Villa",
+      "capacity": 6,
+      "available_inventory": 1,
+      "price_per_night": 600,
+      "bed_type": "2 King Beds + 1 Sofa Bed",
+      "size_sqft": 1100,
+      "breakfast_included": true,
+      "ocean_view": true,
+      "description": "Ultra-exclusive private villa with direct beach access, private plunge pool, 2 master bedrooms, full kitchen, and personalized concierge service.",
+      "amenities": ["Private plunge pool", "Direct beach access", "Full kitchen", "Butler service", "Free Wi-Fi", "Private terrace", "Jacuzzi"]
+    }
+  ],
+  "amenities": [
+    {
+      "name": "Infinity Swimming Pool",
+      "hours": "6:00 AM - 10:00 PM",
+      "details": "Heated outdoor oceanfront infinity pool with complimentary loungers, towels, and poolside cocktail service."
+    },
+    {
+      "name": "Fitness & Wellness Center",
+      "hours": "24/7",
+      "details": "State-of-the-art gym equipped with Technogym cardio machines, free weights, yoga studio, and steam saunas."
+    },
+    {
+      "name": "Azure Spa",
+      "hours": "9:00 AM - 8:00 PM",
+      "details": "Full-service luxury spa offering aromatherapy, deep tissue massage, facials, and hydrotherapy pools."
+    },
+    {
+      "name": "High-Speed Wi-Fi",
+      "hours": "24/7",
+      "details": "Complimentary ultra-fast Wi-Fi available throughout all guest rooms, public areas, and beach loungers."
+    },
+    {
+      "name": "Parking",
+      "hours": "24/7",
+      "details": "Valet parking available at $25/night with EV charging stations included. Self-parking available at $15/night."
+    }
+  ],
+  "dining": {
+    "breakfast": {
+      "included": true,
+      "hours": "7:00 AM - 10:30 AM daily",
+      "location": "The Wave Restaurant & Terrace",
+      "details": "Complimentary gourmet breakfast buffet featuring fresh bakery items, made-to-order omelets, tropical fruits, artisan coffee, and vegan options."
+    },
+    "restaurants": [
+      {
+        "name": "The Wave Oceanfront Bistro",
+        "cuisine": "Seafood & Modern Coastal",
+        "hours": "12:00 PM - 10:00 PM",
+        "details": "Fine dining restaurant serving fresh local seafood, organic steaks, and handcrafted cocktails overlooking the ocean."
+      },
+      {
+        "name": "Sunset Pool Lounge",
+        "cuisine": "Cocktails & Tapas",
+        "hours": "11:00 AM - 11:00 PM",
+        "details": "Casual outdoor bar and lounge serving wood-fired pizzas, fresh salads, craft beer, and tropical cocktails."
+      }
+    ]
+  },
+  "policies": {
+    "check_in": "Check-in starts at 3:00 PM. Early check-in can be requested and is subject to room availability upon arrival.",
+    "check_out": "Check-out is by 11:00 AM. Late check-out up to 2:00 PM is available for a fee of $50 upon request at reception.",
+    "cancellation": "Free cancellation is permitted up to 48 hours prior to the scheduled check-in date. Cancellations within 48 hours incur a fee equivalent to 1 night's stay.",
+    "pets": "Pets under 35 lbs are welcome in designated pet-friendly rooms with a non-refundable cleaning fee of $75 per stay. Service animals stay free.",
+    "smoking": "Harbor View Hotel is a 100% non-smoking property. Smoking in guest rooms or balconies will result in a $250 deep cleaning fee.",
+    "children": "Children of all ages are welcome. Children under 12 stay free when using existing bedding."
+  },
+  "faqs": [
+    {
+      "question": "Does the hotel provide airport transportation?",
+      "answer": "Yes! We offer airport shuttle service to/from Harbor Bay International Airport for $35 per guest. Private luxury sedan transfers can also be arranged through our concierge."
+    },
+    {
+      "question": "Can I store my luggage before check-in or after check-out?",
+      "answer": "Absolutely. Luggage storage is available free of charge at the front desk 24 hours a day."
+    },
+    {
+      "question": "Is room service available?",
+      "answer": "Yes, 24-hour in-room dining is available from our restaurant menu."
+    }
+  ]
+}
